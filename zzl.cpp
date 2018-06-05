@@ -1,3 +1,6 @@
+/*
+*c++ prime 1-25面里面比较有意思的代码作为记录
+*/
 #include<iostream>
 using namespace std;
 int main()
