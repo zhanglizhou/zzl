@@ -1,3 +1,9 @@
+/*
+*this is the first step for me to understand cpp
+*code is clone from c++ prime(A famous book)
+*this is a easy way to remember how many times you print a same number!!!
+*2018.6.6
+*/
 #include<iostream>
 using namespace std;
 int main()
