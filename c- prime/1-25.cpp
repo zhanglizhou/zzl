@@ -22,5 +22,8 @@ int main()
 		}
 		cout << curval << " occurs " << bnt << " times " << endl; 
 	}
-	return 0;
+	else {
+		cerr << " WRong " << endl;
+		return -1;
+	}
 }
