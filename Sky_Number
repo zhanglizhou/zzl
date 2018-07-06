@@ -1,0 +1,29 @@
+#include<stdio.h>
+//a为4位数，num为进制数
+int ten2num(int a, int num)
+{
+    int count = 0;
+    int s = 0;
+    int b[10];
+    for(int i=0;i<10;i++)
+        b[i] = 0;
+    for(int j=0;a/num!=0;j++){
+        b[j] = a % num;
+        a /= num;
+        count++;
+    }
+    b[count] = a;
+    for(int k=0;k<10;k++){
+        s += b[k];
+    }
+    return s;
+}
+
+int main(){
+    int a;
+    for(a=1000;a<9999;a++) {
+        if (ten2num(a, 16) == ten2num(a, 10) && ten2num(a, 10) == ten2num(a, 12))
+            printf("%d is a Sky Number.\n", a);
+    }
+    return 0;
+}
