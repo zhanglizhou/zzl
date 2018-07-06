@@ -1,0 +1,45 @@
+#include<stdio.h>
+#define PI 3.1415926
+
+double a[200];
+int f,n;//f:人数 n:蛋糕总类数
+
+
+
+int check(double size)
+{
+    int sum=0;
+    for(int i=1;i<=n;i++)
+    {
+        sum+=int(a[i]/size);
+    }
+    if(sum>=f+1)
+        return 1;
+    else
+        return 0;
+}
+
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        double low, high, mid, v = 0;
+        scanf("%d%d", &n, &f);
+        for (int i = 1; i <= n; i++) {
+            scanf("%lf", &a[i]);
+            a[i] = a[i] * a[i] * PI;
+            v += a[i];
+        }
+        low = 0;
+        high = v / (f + 1);
+        while (high - low > 1e-3) {
+            mid = (high + low) / 2;
+            if (check(mid)) {
+                low = mid;
+            } else high = mid;
+        }
+        printf("%.4lf\n", mid);
+    }
+    return 0;
+}
