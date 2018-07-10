@@ -27,3 +27,30 @@ int main(){
     }
     return 0;
 }
+
+
+
+
+/*
+**改进版 2018.7.11
+*/
+#include <iostream>
+using namespace std;
+int main()
+{
+    int ten2num(int, int);
+    int i;
+    for(i = 1000;i<9999;i++){
+        if(ten2num(i, 16) == ten2num(i, 10) && ten2num(i, 10) == ten2num(i, 12))
+            cout << i <<" is Sky number" << endl;
+    }
+}
+
+int ten2num(int n, int m){
+    int s = 0;
+    while(n != 0){
+        s += n % m;
+        n /= m;
+    }
+    return s;
+}
