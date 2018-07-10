@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    int a[1010],b[1010];
+    int i,j,k;
+    while(scanf("%d",&n)!=-1 && n)
+    {
+        while(scanf("%d",&a[0])!=-1 && a[0])
+        {
+            for(i=1;i<n;i++)
+            {
+                scanf("%d",&a[i]);
+            }//a[] = {1,2,3,..,5} || {5,4,3,2,1}
+
+
+            for(i=0,j=1,k=0;i<n && j<=n;j++,k++)
+            {
+                b[k]=j; // b[] = {1,2,3,...n};
+                while(b[k]==a[i])
+                {
+                    if(k>0)
+                        k--;
+                    else
+                    {
+                        b[k]=0;
+                        k--;
+                    }
+                    i++;
+                    if(k==-1)
+                        break;
+                }
+            }
+            if(i==n)
+                printf("Yes\n");
+            else
+                printf("No\n");
+        }
+        printf("\n");
+    }
+    return 0;
+}
