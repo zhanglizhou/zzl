@@ -1,0 +1,39 @@
+/*
+**c++ edition
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    void move(int, char,char,char);
+    int n;
+    cout << "请输入涵洛塔的阶数:" << endl;
+    cin >> n;
+    move(n,'A','B','C');
+    return 0;
+}
+
+void move(int n, char a, char b, char c){
+    if(n == 1)
+        cout << a << "------>" << c << endl;
+    else {
+        move(n - 1, a, c, b);
+        move(1,a,b,c);
+        move(n-1,b,a,c);
+    }
+}
+
+
+
+#python edition
+
+def haluo(n,a,b,c):
+    if n == 1:
+        print(a+'-->'+c)
+    else:
+        haluo(n-1,a,c,b)
+        haluo(1,a,b,c)
+        haluo(n-1,b,a,c)
+
+
