@@ -1,0 +1,3 @@
+c++:
+1.在clang下运行c++11的时候，需要g++ -std=c++11 name.cpp -o name, 运行的时候./name即可，否则会有warning(c++ prime p83的for遍历遇到)
+2.
